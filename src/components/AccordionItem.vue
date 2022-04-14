@@ -1,7 +1,7 @@
 <template>
     <div :class="item.id === active ? 'accordion-single-content active' : 'accordion-single-content'">
         <h2 class="accordion-single__title"><button @click="toggleItemClass(item.id)">{{item.title}}</button></h2>
-        <div :class="item.id === active ? 'accordion-single-body active' : 'accordion-single-body'">
+        <div class="accordion-single-body">
             <p class="accordion-single__text" v-html="item.body"></p>
         </div>
     </div>
@@ -55,7 +55,7 @@
         transition: .5s;
     }
 
-    .accordion-single-body.active  {
+    .accordion-single-content.active .accordion-single-body  {
         max-height: 175px;
         height: auto;
         transition: .5s;
